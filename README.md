@@ -11,7 +11,7 @@ A python script to update a dns record to your current internet routable IP. Han
 The help page (The `-h` or `--help` flags):
 
 ```
-# python3 ./update_record.py -h
+$ python3 ./update_record.py -h
 
 usage: update_record.py [-h] [--record-id RECORD_ID] [--api-user API_USER]
                         [--api-pass API_PASS] [--get-record-id]
@@ -45,3 +45,11 @@ Once you know that, you can throw this command into a cron. On my Raspberry PI, 
 ```
 
 At this point it will check for your current routable IP, then compare it to what is current set for the record, and update it via the Storm API if need be.
+
+You can also set the api user, password and record id with environement variables. Just set the following in your shell session or crontab and you can run the script without arguments.
+
+```
+$ export STORM_API_USER="username"
+$ export STORM_API_PASS="password"
+$ export STORM_RECORD_ID="123456"
+```
